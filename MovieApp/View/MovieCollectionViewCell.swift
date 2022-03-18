@@ -14,11 +14,13 @@ class MovieCollectionViewCell: UICollectionViewCell {
         didSet {
             if let movie = movie {
                 movieImage.kf.setImage(with: "\(movie.posterPath ?? "")".url)
+                movieTitleLbl.text = movie.title
             }
         }
     }
     
     @IBOutlet private weak var movieImage: UIImageView!
+    @IBOutlet weak var movieTitleLbl: UILabel!
 }
 
 extension String{
